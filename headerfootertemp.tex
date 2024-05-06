@@ -1,0 +1,30 @@
+
+\documentclass[a4paper,10pt]{article} %Initiates the documentclass article with paper- and font-size.
+
+\usepackage[utf8]{inputenc} %The inputenc package allows you to tell LaTeX about the input (file) encoding of your TeX document.
+\usepackage[T1]{fontenc} %fontec tells LaTeX which encoding to use for the output.
+\usepackage[sfdefault,lf]{carlito} %Sets default font.
+\usepackage{graphicx} %The package builds upon the graphics package, providing a key-value interface for optional arguments to the \includegraphics command.
+\usepackage[left=3.5cm, right=2.5cm, top=2.0cm, bottom=1.8cm, headheight=68pt,includeheadfoot]{geometry} %Margins are set for the boarders of the letter. The crucial points are setting headheight to a value bigger than the one in the warning (and omitting the \setlength\headheight command) and includeheadfoot if you use a footer at the same time (otherwise the footer ay disappear).
+\usepackage{longtable} %Longtable allows you to write tables that continue to the next page.
+\usepackage{shellesc} % This could help for the gt package to work in case you want to include tables in the letter.
+
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\usepackage{lastpage} %Counts the number of pages in the document.
+\usepackage{fancyhdr} %Extensive facilities, both for constructing headers and footers, and for controlling their use.
+\pagestyle{fancy} % Package to add  headers and footers.
+
+\lhead{\includegraphics[width=3.75cm]{C:/Users/heinz/Documents/R_Dokumente/Letter_template/generic_company_logo.jpg}} % lhead puts the logo to the left side of the header. The width sets the size f the logo.
+\lfoot{\fontsize{9pt}{11pt}\selectfont Company Name \quad Address \quad Zip and City \quad T +41 (.).. ... .. .. \quad e-mail address} % The \quad command seperates the sections of the address more visible.
+\cfoot{ \\{\thepage\ / \pageref{LastPage}} }
+% Wenn lfoot statt cfoot verwendet wird, erscheitn die Seitenzahl unter der Fusszeile.
+\renewcommand{\headrulewidth}{0.0pt} %With the headrulewidth set to 0.0pt the headrule disappears.
+
+%The document part below is for the rmd file to be added.
+\begin{document}
+$body$
+\end{document}
+
